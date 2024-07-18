@@ -5,7 +5,7 @@
   },
   "waitFor": "onCreateCommand",
   "updateContentCommand": "npm install",
-  "postCreateCommand": "",
+  "postCreateCommand": "npm install; pip install -r requirements.txt",
   "postAttachCommand": {},
   "customizations": {
     "codespaces": {
