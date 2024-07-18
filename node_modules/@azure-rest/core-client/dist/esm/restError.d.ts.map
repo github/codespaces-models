@@ -1,0 +1,1 @@
+{"version":3,"file":"restError.d.ts","sourceRoot":"","sources":["../../src/restError.ts"],"names":[],"mappings":"AAGA,OAAO,EAAoB,SAAS,EAAqB,MAAM,2BAA2B,CAAC;AAC3F,OAAO,EAAE,qBAAqB,EAAE,MAAM,aAAa,CAAC;AAEpD;;GAEG;AACH,wBAAgB,eAAe,CAAC,QAAQ,EAAE,qBAAqB,GAAG,SAAS,CAAC;AAC5E;;GAEG;AACH,wBAAgB,eAAe,CAAC,OAAO,EAAE,MAAM,EAAE,QAAQ,EAAE,qBAAqB,GAAG,SAAS,CAAC"}
