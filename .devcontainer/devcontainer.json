@@ -1,7 +1,7 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "updateContentCommand": "npm install",
-  "postCreateCommand": "npm install; pip install -r requirements.txt",
+  "updateContentCommand": "npm install; pip install -r requirements.txt",
+  "postCreateCommand": "",
   "customizations": {
     "codespaces": {
       "openFiles": [
