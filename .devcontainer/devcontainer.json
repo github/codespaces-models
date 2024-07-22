@@ -1,12 +1,7 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 4
-  },
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "npm install",
-  "postCreateCommand": "npm install; pip install -r requirements.txt",
-  "postAttachCommand": {},
+  "updateContentCommand": "npm install; pip install -r requirements.txt",
+  "postCreateCommand": "",
   "customizations": {
     "codespaces": {
       "openFiles": [
