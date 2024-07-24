@@ -17,5 +17,5 @@ To run a Python sample, run the following command in your terminal:
 
 ```bash
 # To run the multi-turn sample using the Azure AI Inference SDK:
-$ python samples/python/azure_ai_inference/multi_turn.js
+$ python samples/python/azure_ai_inference/multi_turn.py
 ```
