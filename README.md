@@ -8,4 +8,10 @@ Everything you do here is contained within this one codespace. There is no repos
 
 ## Getting Started
 
-There are a few basic examples that are ready for you to run. You can find them in the [samples directory](/samples/README.md). Each sample is a standalone script that demonstrates how to interact with GitHub Models.
+There are a few basic examples that are ready for you to run. You can find them in the [samples directory](/samples/README.md). If you want to jump straight to your favorite language, you can find the examples in the following directories:
+- [JavaScript](/samples/js/README.md)
+- [Python](/samples/python/README.md)
+- [REST](/samples/curl/README.md)
+
+If you are already familiar with the GitHub Models service, you can start by running our Cookbook examples. You can find them in the [cookbooks directory](/cookbooks/README.md). Here are the direct links to the available languages:
+- [Python](/cookbooks/python/README.md)

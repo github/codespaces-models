@@ -7,6 +7,18 @@
       "openFiles": [
         "README.md"
       ]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.prompty"
+      ],
+      "settings": {
+        "workbench.editorAssociations": {
+            "*.md": "vscode.markdown.preview.editor"
+        }
+      }
     }
   }
 }
