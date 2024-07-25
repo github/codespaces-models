@@ -2,6 +2,7 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "updateContentCommand": "npm install; pip install -r requirements.txt",
   "postCreateCommand": "",
+  "postStartCommand": "npm install; pip install -r requirements.txt",
   "customizations": {
     "codespaces": {
       "openFiles": [
@@ -16,7 +17,7 @@
       ],
       "settings": {
         "workbench.editorAssociations": {
-            "*.md": "vscode.markdown.preview.editor"
+          "*.md": "vscode.markdown.preview.editor"
         }
       }
     }
