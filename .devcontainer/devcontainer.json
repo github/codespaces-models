@@ -1,10 +1,10 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "updateContentCommand": "npm install; pip install -r requirements.txt",
-  "postCreateCommand": "",
   "postStartCommand": "npm install; pip install -r requirements.txt",
   "customizations": {
     "codespaces": {
+      "disableAutomaticConfiguration": true,
       "openFiles": [
         "README.md"
       ]
