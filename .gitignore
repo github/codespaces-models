@@ -4,3 +4,4 @@ __pycache__/
 cookbooks/python/openai/vector_databases/chroma/vector_database_wikipedia_articles_embedded*.zip
 cookbooks/python/openai/vector_databases/data/vector_database_wikipedia_articles_embedded.csv
 .env.save
+node_modules/
