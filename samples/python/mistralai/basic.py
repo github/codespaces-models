@@ -5,25 +5,24 @@ import os
 from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 
-# Ensure the GITHUB_TOKEN environment variable is set
-assert "GITHUB_TOKEN" in os.environ, "Please set the GITHUB_TOKEN environment variable."
-github_token = os.environ["GITHUB_TOKEN"]
-
-# We can use some defaults for the other two variables
+token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
-model_name = "Mistral-large"
 
-# Create a client
-client = MistralClient(api_key=github_token, endpoint=endpoint)
+# Pick one of the Mistral models from the GitHub Models service
+model_name = "Mistral-small"
 
-# Call the chat completion API
+client = MistralClient(api_key=token, endpoint=endpoint)
+
 response = client.chat(
     model=model_name,
     messages=[
         ChatMessage(role="system", content="You are a helpful assistant."),
         ChatMessage(role="user", content="What is the capital of France?"),
     ],
+    # Optional parameters
+    temperature=1.,
+    max_tokens=1000,
+    top_p=1.    
 )
 
-# Print the response
 print(response.choices[0].message.content)

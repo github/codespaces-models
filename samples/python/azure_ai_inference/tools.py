@@ -17,23 +17,26 @@ from azure.ai.inference.models import (
 )
 from azure.core.credentials import AzureKeyCredential
 
-# Ensure the GITHUB_TOKEN environment variable is set
 assert "GITHUB_TOKEN" in os.environ, "Please set the GITHUB_TOKEN environment variable."
-github_token = os.environ["GITHUB_TOKEN"]
+token = os.environ["GITHUB_TOKEN"]
 
-# We can use some defaults for the other two variables
 endpoint = "https://models.inference.ai.azure.com"
-# Use any model of the catalog, this SDK works with all chat models
+
+# By using the Azure AI Inference SDK, you can easily experiment with different models
+# by modifying the value of `modelName` in the code below. For this code sample
+# you need a model supporting tools. The following compatible models are
+# available in the GitHub Models service:
+# 
+# Cohere: Cohere-command-r, Cohere-command-r-plus
+# Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
+# Azure OpenAI: gpt-4o, gpt-4o-mini
 model_name = "gpt-4o"
 
-# Create a client
 client = ChatCompletionsClient(
     endpoint=endpoint,
-    credential=AzureKeyCredential(github_token),
+    credential=AzureKeyCredential(token),
 )
 
-
-# Define a function that returns flight information between two cities (mock implementation)
 def get_flight_info(origin_city: str, destination_city: str):
     if origin_city == "Seattle" and destination_city == "Miami":
         return json.dumps(
@@ -46,8 +49,6 @@ def get_flight_info(origin_city: str, destination_city: str):
         )
     return json.dump({"error": "No flights found between the cities"})
 
-
-# Define a function tool that the model can ask to invoke in order to retrieve flight information
 flight_info = ChatCompletionsFunctionToolDefinition(
     function=FunctionDefinition(
         name="get_flight_info",
@@ -85,13 +86,10 @@ response = client.complete(
     model=model_name,
 )
 
-# We expect the model to ask for a tool call
 if response.choices[0].finish_reason == CompletionsFinishReason.TOOL_CALLS:
 
-    # Append the model response to the chat history
     messages.append(AssistantMessage(tool_calls=response.choices[0].message.tool_calls))
 
-    # We expect a single tool call
     if (
         response.choices[0].message.tool_calls
         and len(response.choices[0].message.tool_calls) == 1
@@ -99,10 +97,8 @@ if response.choices[0].finish_reason == CompletionsFinishReason.TOOL_CALLS:
 
         tool_call = response.choices[0].message.tool_calls[0]
 
-        # We expect the tool to be a function call
         if isinstance(tool_call, ChatCompletionsFunctionToolCall):
 
-            # Parse the function call arguments and call the function
             function_args = json.loads(tool_call.function.arguments.replace("'", '"'))
             print(
                 f"Calling function `{tool_call.function.name}` with arguments {function_args}"
@@ -111,12 +107,10 @@ if response.choices[0].finish_reason == CompletionsFinishReason.TOOL_CALLS:
             function_return = callable_func(**function_args)
             print(f"Function returned = {function_return}")
 
-            # Append the function call result fo the chat history
             messages.append(
                 ToolMessage(tool_call_id=tool_call.id, content=function_return)
             )
 
-            # Get another response from the model
             response = client.complete(
                 messages=messages,
                 tools=[flight_info],

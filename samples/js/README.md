@@ -13,9 +13,8 @@ You can also use the [`azure-ai-inference`](./azure_ai_inference/README.md) pack
 
 ## Running a sample
 
-To run a JavaScript sample, run the following command in your terminal:
+To run a JavaScript sample, a command like the following in your terminal:
 
-```bash
-# To run the multi-turn sample using the Azure AI Inference SDK:
-$ node samples/js/azure_ai_inference/multi_turn.js
+```shell
+node samples/js/azure_ai_inference/multi_turn.js
 ```
