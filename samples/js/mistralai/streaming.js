@@ -2,6 +2,8 @@ import MistralClient from '@mistralai/mistralai';
 
 const token = process.env["GITHUB_TOKEN"];
 const endpoint = "https://models.inference.ai.azure.com";
+
+/* Pick one of the Mistral models from the GitHub Models service */
 const modelName = "Mistral-small";
 
 export async function main() {

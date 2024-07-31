@@ -6,22 +6,26 @@ from azure.ai.inference import ChatCompletionsClient
 from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
 
-# Ensure the GITHUB_TOKEN environment variable is set
-assert "GITHUB_TOKEN" in os.environ, "Please set the GITHUB_TOKEN environment variable."
-github_token = os.environ["GITHUB_TOKEN"]
-
-# We can use some defaults for the other two variables
+token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
-# Use any model of the catalog, this SDK works with all chat models
+
+# By using the Azure AI Inference SDK, you can easily experiment with different models
+# by modifying the value of `model_name` in the code below. The following models are
+# available in the GitHub Models service:
+#
+# AI21 Labs: AI21-Jamba-Instruct
+# Cohere: Cohere-command-r, Cohere-command-r-plus
+# Meta: Meta-Llama-3-70B-Instruct, Meta-Llama-3-8B-Instruct, Meta-Llama-3.1-405B-Instruct, Meta-Llama-3.1-70B-Instruct, Meta-Llama-3.1-8B-Instruct
+# Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
+# Azure OpenAI: gpt-4o, gpt-4o-mini
+# Microsoft: Phi-3-medium-128k-instruct, Phi-3-medium-4k-instruct, Phi-3-mini-128k-instruct, Phi-3-mini-4k-instruct, Phi-3-small-128k-instruct, Phi-3-small-8k-instruct
 model_name = "gpt-4o"
 
-# Create a client
 client = ChatCompletionsClient(
     endpoint=endpoint,
-    credential=AzureKeyCredential(github_token),
+    credential=AzureKeyCredential(token),
 )
 
-# Call the chat completion API
 response = client.complete(
     messages=[
         {
@@ -34,7 +38,10 @@ response = client.complete(
         },
     ],
     model=model_name,
+    # Optional parameters
+    temperature=1.,
+    max_tokens=1000,
+    top_p=1.    
 )
 
-# Print the response
 print(response.choices[0].message.content)

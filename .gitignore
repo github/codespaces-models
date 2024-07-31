@@ -1,7 +1,11 @@
+.vscode/
 __pycache__/
 .env
 .DS_Store
 cookbooks/python/openai/vector_databases/chroma/vector_database_wikipedia_articles_embedded*.zip
 cookbooks/python/openai/vector_databases/data/vector_database_wikipedia_articles_embedded.csv
 .env.save
-node_modules/
+cookbooks/python/openai/data/hotel_invoices/transformed_invoice_json/*
+cookbooks/python/openai/data/hotel_invoices/extracted_invoice_json/*
+cookbooks/python/openai/data/hotel_invoices/hotel_DB.db
+cookbooks/python/openai/hallucination_results.csv
