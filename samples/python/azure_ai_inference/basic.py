@@ -28,20 +28,13 @@ client = ChatCompletionsClient(
 
 response = client.complete(
     messages=[
-        {
-            "role": "system",
-            "content": "You are a helpful assistant.",
-        },
-        {
-            "role": "user",
-            "content": "What is the capital of France?",
-        },
+        SystemMessage(content="You are a helpful assistant."),
+        UserMessage(content="What is the capital of France?"),
     ],
     model=model_name,
-    # Optional parameters
     temperature=1.,
     max_tokens=1000,
-    top_p=1.    
+    top_p=1.
 )
 
 print(response.choices[0].message.content)
