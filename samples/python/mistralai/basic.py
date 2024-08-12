@@ -2,8 +2,7 @@
 It is leveraging your endpoint and key. The call is synchronous."""
 
 import os
-from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage
+from mistralai import Mistral
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
@@ -11,13 +10,13 @@ endpoint = "https://models.inference.ai.azure.com"
 # Pick one of the Mistral models from the GitHub Models service
 model_name = "Mistral-small"
 
-client = MistralClient(api_key=token, endpoint=endpoint)
+client = Mistral(api_key=token, server_url=endpoint)
 
-response = client.chat(
+response = client.chat.complete(
     model=model_name,
     messages=[
-        ChatMessage(role="system", content="You are a helpful assistant."),
-        ChatMessage(role="user", content="What is the capital of France?"),
+        {"role":"system", "content":"You are a helpful assistant."},
+        {"role":"user", "content":"What is the capital of France?"},
     ],
     # Optional parameters
     temperature=1.,

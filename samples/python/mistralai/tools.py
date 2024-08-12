@@ -4,14 +4,13 @@ This sample demonstrates how to define a function tool
 and how to act on a request from the model to invoke it."""
 import os
 import json
-from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage, Function
+from mistralai import Mistral
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
 
 # Pick one of the Mistral models from the GitHub Models service
-model_name = "Mistral-large"
+model_name = "Mistral-large-2407"
 
 
 # Define a function that returns flight
@@ -30,48 +29,44 @@ def get_flight_info(origin_city: str, destination_city: str):
 # can ask to invoke in order to retrieve flight information
 tool = {
     "type": "function",
-    "function": Function(
-        name="get_flight_info",
-        description="""Returns information about the next flight
-            between two cities.
-            This includes the name of the airline,
-            flight number and the date and time
+    "function": {
+        "name": "get_flight_info",
+        "description": """Returns information about the next flight between two cities.
+            This includes the name of the airline, flight number and the date and time
             of the next flight""",
-        parameters={
+        "parameters": {
             "type": "object",
             "properties": {
                 "origin_city": {
                     "type": "string",
-                    "description": ("The name of the city"
-                                    " where the flight originates"),
+                    "description": "The name of the city where the flight originates",
                 },
                 "destination_city": {
                     "type": "string",
                     "description": "The flight destination city",
                 },
             },
-            "required": [
-                "origin_city",
-                "destination_city"
-            ],
-        }
-    )
+            "required": ["origin_city", "destination_city"],
+        },
+    },
 }
 
 
-client = MistralClient(api_key=token, endpoint=endpoint)
+client = Mistral(api_key=token, server_url=endpoint)
 
 messages = [
-    ChatMessage(
-        role="system",
-        content="You an assistant that helps users find flight information."),
-    ChatMessage(
-        role="user",
-        content=("I'm interested in going to Miami. What is "
-                 "the next flight there from Seattle?")),
+    {
+        "role":"system",
+        "content":"You an assistant that helps users find flight information."
+    },
+    {
+        "role":"user",
+        "content":("I'm interested in going to Miami. What is "
+                   "the next flight there from Seattle?")
+    },
 ]
 
-response = client.chat(
+response = client.chat.complete(
     messages=messages,
     tools=[tool],
     model=model_name,
@@ -90,7 +85,7 @@ if response.choices[0].finish_reason == "tool_calls":
         tool_call = response.choices[0].message.tool_calls[0]
 
         # We expect the tool to be a function call
-        if tool_call.type == "function":
+        if tool_call.TYPE == "function":
 
             # Parse the function call arguments and call the function
             function_args = json.loads(
@@ -103,16 +98,16 @@ if response.choices[0].finish_reason == "tool_calls":
 
             # Append the function call result fo the chat history
             messages.append(
-                ChatMessage(
-                    role="tool",
-                    name=tool_call.function.name,
-                    content=function_return,
-                    tool_call_id=tool_call.id,
-                )
+                {
+                    "role":"tool",
+                    "name":tool_call.function.name,
+                    "content":function_return,
+                    "tool_call_id":tool_call.id,
+                }
             )
 
             # Get another response from the model
-            response = client.chat(
+            response = client.chat.complete(
                 messages=messages,
                 tools=[tool],
                 model=model_name,

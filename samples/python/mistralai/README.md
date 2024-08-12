@@ -19,3 +19,4 @@ python3 samples/python/mistralai/basic.py
 * [basic.py](basic.py): basic call to the gpt-4o chat completion API
 * [multi_turn.py](multi_turn.py): multi-turn conversation with the chat completion API
 * [streaming.py](streaming.py): generate a response in streaming mode, token by token
+* [tools.py](tools.py): define a function tool request from the model to invoke it

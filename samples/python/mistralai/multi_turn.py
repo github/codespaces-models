@@ -4,8 +4,7 @@ conversation and send the latest messages to the model.
 """
 
 import os
-from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage
+from mistralai import Mistral
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
@@ -14,16 +13,16 @@ endpoint = "https://models.inference.ai.azure.com"
 model_name = "Mistral-small"
 
 # Create a client
-client = MistralClient(api_key=token, endpoint=endpoint)
+client = Mistral(api_key=token, server_url=endpoint)
 
 # Call the chat completion API
-response = client.chat(
+response = client.chat.complete(
     model=model_name,
     messages=[
-        ChatMessage(role="system", content="You are a helpful assistant."),
-        ChatMessage(role="user", content="What is the capital of France?"),
-        ChatMessage(role="assistant", content="The capital of France is Paris."),
-        ChatMessage(role="user", content="What about Spain?"),
+        {"role":"system", "content":"You are a helpful assistant."},
+        {"role":"user", "content":"What is the capital of France?"},
+        {"role":"assistant", "content":"The capital of France is Paris."},
+        {"role":"user", "content":"What about Spain?"},
     ],
 )
 
