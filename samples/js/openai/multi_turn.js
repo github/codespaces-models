@@ -4,7 +4,7 @@ const token = process.env["GITHUB_TOKEN"];
 const endpoint = "https://models.inference.ai.azure.com";
 
 /* Pick one of the Azure OpenAI models from the GitHub Models service */
-const modelName = "gpt-4o";
+const modelName = "gpt-4o-mini";
 
 export async function main() {
 

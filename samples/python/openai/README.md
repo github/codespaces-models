@@ -17,7 +17,7 @@ To run these scripts, open your terminal and run a command like:
 python3 samples/python/openai/basic.py
 ```
 
-* [basic.py](basic.py): basic call to the gpt-4o chat completion API
+* [basic.py](basic.py): basic call to the gpt-4o-mini chat completion API
 * [chat_with_image_file.py](chat_with_image_file.py): image file as input
 * [multi_turn.py](multi_turn.py): multi-turn conversation with the chat completion API
 * [streaming.py](streaming.py): generate a response in streaming mode, token by token

@@ -12,5 +12,5 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
                 "content": "What is the capital of France?"
             }
         ],
-        "model": "gpt-4o"
+        "model": "gpt-4o-mini"
     }'

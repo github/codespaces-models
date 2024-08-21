@@ -19,7 +19,7 @@ Use this Codespace to edit the samples and see what happens! Here are a few sugg
 Try switching to a different model by finding a line like the one below and changing the model selected. You can find other models to try at [GitHub Marketplace](https://github.com/marketplace/models).
 
 ```json
-        "model": "gpt-4o"
+        "model": "gpt-4o-mini"
 ```
 
 ### Try a different prompt

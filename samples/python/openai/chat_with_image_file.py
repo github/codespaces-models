@@ -9,7 +9,7 @@ token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.inference.ai.azure.com"
 
 # Pick one of the Azure OpenAI models from the GitHub Models service
-model_name = "gpt-4o"
+model_name = "gpt-4o-mini"
 
 # Create a client
 client = OpenAI(

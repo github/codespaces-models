@@ -17,9 +17,9 @@ endpoint = "https://models.inference.ai.azure.com"
 # Cohere: Cohere-command-r, Cohere-command-r-plus
 # Meta: Meta-Llama-3-70B-Instruct, Meta-Llama-3-8B-Instruct, Meta-Llama-3.1-405B-Instruct, Meta-Llama-3.1-70B-Instruct, Meta-Llama-3.1-8B-Instruct
 # Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
-# Azure OpenAI: gpt-4o, gpt-4o-mini
+# Azure OpenAI: gpt-4o-mini, gpt-4o
 # Microsoft: Phi-3-medium-128k-instruct, Phi-3-medium-4k-instruct, Phi-3-mini-128k-instruct, Phi-3-mini-4k-instruct, Phi-3-small-128k-instruct, Phi-3-small-8k-instruct
-model_name = "gpt-4o"
+model_name = "gpt-4o-mini"
 
 client = ChatCompletionsClient(
     endpoint=endpoint,

@@ -29,8 +29,8 @@ endpoint = "https://models.inference.ai.azure.com"
 # 
 # Cohere: Cohere-command-r, Cohere-command-r-plus
 # Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
-# Azure OpenAI: gpt-4o, gpt-4o-mini
-model_name = "gpt-4o"
+# Azure OpenAI: gpt-4o-mini, gpt-4o
+model_name = "gpt-4o-mini"
 
 client = ChatCompletionsClient(
     endpoint=endpoint,

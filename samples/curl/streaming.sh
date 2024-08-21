@@ -13,5 +13,5 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
             }
         ],
         "stream": true,
-        "model": "gpt-4o"
+        "model": "gpt-4o-mini"
     }'

@@ -20,5 +20,5 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
                 "content": "What about Spain?"
             }
         ],
-        "model": "gpt-4o"
+        "model": "gpt-4o-mini"
     }'
