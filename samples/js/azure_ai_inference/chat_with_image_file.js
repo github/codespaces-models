@@ -1,6 +1,7 @@
 import ModelClient from "@azure-rest/ai-inference";
 import { AzureKeyCredential } from "@azure/core-auth";
 import fs from 'fs';
+import path from 'path';
 
 const token = process.env["GITHUB_TOKEN"];
 const endpoint = "https://models.inference.ai.azure.com";
@@ -10,8 +11,8 @@ const endpoint = "https://models.inference.ai.azure.com";
    you need to use a model that supports image inputs. The following image models are
    available in the GitHub Models service:
 
-   Azure OpenAI: gpt-4o, gpt-4o-mini */
-const modelName = "gpt-4o";
+   Azure OpenAI: gpt-4o-mini, gpt-4o */
+const modelName = "gpt-4o-mini";
 
 export async function main() {
 
@@ -24,7 +25,7 @@ export async function main() {
         { role: "user", content: [
             { type: "text", text: "What's in this image?"},
             { type: "image_url", image_url: {
-                url: getImageDataUrl("/workspaces/codespaces-models/samples/js/azure_ai_inference/sample.png", "png"), details: "low"}}
+                url: getImageDataUrl(path.join(import.meta.dirname, "sample.png"), "png"), details: "low"}}
           ]
         }
       ],

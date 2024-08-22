@@ -1,11 +1,12 @@
 import fs from 'fs';
+import path from 'path';
 import OpenAI from "openai";
 
 const token = process.env["GITHUB_TOKEN"];
 const endpoint = "https://models.inference.ai.azure.com";
 
 /* Pick one of the Azure OpenAI models from the GitHub Models service */
-const modelName = "gpt-4o";
+const modelName = "gpt-4o-mini";
 
 export async function main() {
 
@@ -17,7 +18,7 @@ export async function main() {
         { role: "user", content: [
             { type: "text", text: "What's in this image?"},
             { type: "image_url", image_url: {
-                url: getImageDataUrl("/workspaces/codespaces-models/samples/js/azure_ai_inference/sample.png", "png"), details: "low"}}
+                url: getImageDataUrl(path.join(import.meta.dirname, "sample.png"), "png"), details: "low"}}
           ]
         }
       ],

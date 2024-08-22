@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Run JavaScript Sample",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "envFile": "${workspaceFolder}/.env",
+            "outputCapture": "std",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
+            "name": "Run Python Sample",
+            "program": "${file}",
+            "cwd": "${fileDirname}",
+            "envFile": "${workspaceFolder}/.env",
+            "redirectOutput": false,
+            "request": "launch",
+            "type": "debugpy"
+        }
+    ]
+}

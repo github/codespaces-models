@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ROOT_DIR=/workspaces/codespaces-models
+
+npm install ${ROOT_DIR}
+
+pip install -r ${ROOT_DIR}/requirements.txt
+

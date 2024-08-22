@@ -1,0 +1,5 @@
+{
+    "unwantedRecommendations": [
+        "ms-azuretools.vscode-docker"
+    ]
+}
