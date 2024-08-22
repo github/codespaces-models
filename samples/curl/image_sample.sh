@@ -1,5 +1,7 @@
+#!/bin/bash
+SCRIPT_DIR=$(dirname $0)
 PAYLOAD_FILE="payload.json"
-IMAGE_DATA="`cat \"$(pwd)/sample.png\" | base64`"
+IMAGE_DATA="`cat \"${SCRIPT_DIR}/sample.png\" | base64`"
 echo '{
         "messages": [
             {
