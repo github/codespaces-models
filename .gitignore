@@ -11,3 +11,4 @@ cookbooks/python/openai/data/hotel_invoices/transformed_invoice_json/*
 cookbooks/python/openai/data/hotel_invoices/extracted_invoice_json/*
 cookbooks/python/openai/data/hotel_invoices/hotel_DB.db
 cookbooks/python/openai/hallucination_results.csv
+node_modules
