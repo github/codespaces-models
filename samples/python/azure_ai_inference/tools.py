@@ -7,8 +7,8 @@ import json
 from azure.ai.inference import ChatCompletionsClient
 from azure.ai.inference.models import (
     AssistantMessage,
-    ChatCompletionsFunctionToolCall,
-    ChatCompletionsFunctionToolDefinition,
+    ChatCompletionsToolCall,
+    ChatCompletionsToolDefinition,
     CompletionsFinishReason,
     FunctionDefinition,
     SystemMessage,
@@ -49,7 +49,7 @@ def get_flight_info(origin_city: str, destination_city: str):
         )
     return json.dump({"error": "No flights found between the cities"})
 
-flight_info = ChatCompletionsFunctionToolDefinition(
+flight_info = ChatCompletionsToolDefinition(
     function=FunctionDefinition(
         name="get_flight_info",
         description="""Returns information about the next flight between two cities.
@@ -97,7 +97,7 @@ if response.choices[0].finish_reason == CompletionsFinishReason.TOOL_CALLS:
 
         tool_call = response.choices[0].message.tool_calls[0]
 
-        if isinstance(tool_call, ChatCompletionsFunctionToolCall):
+        if isinstance(tool_call, ChatCompletionsToolCall):
 
             function_args = json.loads(tool_call.function.arguments.replace("'", '"'))
             print(

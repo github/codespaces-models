@@ -37,8 +37,7 @@
   ],
   "remoteUser": "codespace",
   "containerUser": "codespace",
-  "updateContentCommand": "${containerWorkspaceFolder}/.devcontainer/bootstrap",
-  "postStartCommand": "${containerWorkspaceFolder}/.devcontainer/bootstrap",
+  "onCreateCommand": "${containerWorkspaceFolder}/.devcontainer/bootstrap",
   "customizations": {
     "codespaces": {
       "disableAutomaticConfiguration": true,
