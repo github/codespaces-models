@@ -4,7 +4,7 @@ Welcome to your shiny new Codespace for interacting with GitHub Models! We've go
 
 The git history is a nearly-blank canvas; there's a single initial commit with the contents you're seeing right now - where you go from here is up to you!
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. When you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+Everything you do here is contained within this one codespace. There is no repository on GitHub yet. When you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring and have no further need for this code then you can simply delete your codespace and it's gone forever.
 
 For more information about the Models available on GitHub Models, check out the [Marketplace](https://github.com/marketplace/models).
 
