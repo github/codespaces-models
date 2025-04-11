@@ -14,7 +14,7 @@ To run these notebooks, click on a link below to open it in Codespaces and selec
 To run these scripts, open your terminal and run a command like:
 
 ```shell
-python3 samples/python/openai/basic.py
+python samples/python/openai/basic.py
 ```
 
 * [basic.py](basic.py): basic call to the gpt-4o-mini chat completion API
