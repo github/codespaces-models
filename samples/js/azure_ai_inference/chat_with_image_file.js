@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 const token = process.env["GITHUB_TOKEN"];
-const endpoint = "https://models.inference.ai.azure.com";
+const endpoint = "https://models.github.ai/inference/";
 
 /* By using the Azure AI Inference SDK, you can easily experiment with different models
    by modifying the value of `modelName` in the code below. For this code sample
@@ -12,7 +12,7 @@ const endpoint = "https://models.inference.ai.azure.com";
    available in the GitHub Models service:
 
    Azure OpenAI: gpt-4o-mini, gpt-4o */
-const modelName = "gpt-4o-mini";
+const modelName = "openai/gpt-4o-mini";
 
 export async function main() {
 

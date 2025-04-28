@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
+curl -X POST "https://models.github.ai/inference/chat/completions" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $GITHUB_TOKEN" \
     -d '{
@@ -14,5 +14,5 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
             }
         ],
         "stream": true,
-        "model": "gpt-4o-mini"
+        "model": "openai/gpt-4o-mini"
     }'

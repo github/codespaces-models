@@ -22,7 +22,7 @@
   "invoice_information": {
     "invoice_number": "31611",
     "reservation_number": "92353607",
-    "date": null,
+    "date": "2019-11-04",
     "room_number": "216",
     "check_in_date": "2019-11-04",
     "check_out_date": "2019-11-08"
@@ -75,34 +75,33 @@
       "description": "GUEST ROOM",
       "charge": 114.05,
       "credit": null
+    },
+    {
+      "date": "2019-11-07",
+      "description": "BREAKFAST",
+      "charge": 4.95,
+      "credit": null
     }
   ],
   "totals_summary": {
     "currency": "EUR",
-    "total_net": null,
-    "total_tax": null,
-    "total_gross": null,
-    "total_charge": null,
-    "total_credit": null,
-    "balance_due": null
+    "total_net": 476.0,
+    "total_tax": 0.0,
+    "total_gross": 476.0,
+    "total_charge": 476.0,
+    "total_credit": 188.1,
+    "balance_due": 287.9
   },
   "taxes": [
     {
-      "tax_type": "trade_receivable_net_19%",
+      "tax_type": "VAT 19%",
       "tax_rate": "19%",
       "net_amount": 16.64,
       "tax_amount": 3.16,
       "gross_amount": 19.8
     },
     {
-      "tax_type": "trade_receivable_net_7%",
-      "tax_rate": "7%",
-      "net_amount": 0.0,
-      "tax_amount": 0.0,
-      "gross_amount": 0.0
-    },
-    {
-      "tax_type": "trade_receivable_net_7%_2",
+      "tax_type": "VAT 7%",
       "tax_rate": "7%",
       "net_amount": 426.36,
       "tax_amount": 29.84,

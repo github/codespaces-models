@@ -1,10 +1,10 @@
 import MistralClient from '@mistralai/mistralai';
 
 const token = process.env["GITHUB_TOKEN"];
-const endpoint = "https://models.inference.ai.azure.com";
+const endpoint = "https://models.github.ai/inference/";
 
 /* Pick one of the Mistral models from the GitHub Models service */
-const modelName = "Mistral-small";
+const modelName = "mistral-ai/Mistral-small";
 
 
 function getFlightInfo({originCity, destinationCity}){

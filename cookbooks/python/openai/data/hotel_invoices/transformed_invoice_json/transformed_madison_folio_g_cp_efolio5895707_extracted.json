@@ -32,30 +32,30 @@
       "date": "2019-06-30",
       "description": "Overnight stay excluding breakfast*",
       "charge": 110.0,
-      "credit": null
+      "credit": 0.0
     },
     {
       "date": "2019-07-01",
       "description": "Overnight stay excluding breakfast*",
       "charge": 110.0,
-      "credit": null
+      "credit": 0.0
     },
     {
       "date": "2019-07-02",
       "description": "Overnight stay excluding breakfast*",
       "charge": 110.0,
-      "credit": null
+      "credit": 0.0
     },
     {
       "date": "2019-07-03",
       "description": "Overnight stay excluding breakfast*",
       "charge": 110.0,
-      "credit": null
+      "credit": 0.0
     },
     {
       "date": "2019-07-04",
       "description": "Mastercard IFC",
-      "charge": null,
+      "charge": 0.0,
       "credit": 440.0
     }
   ],
@@ -70,7 +70,7 @@
   },
   "taxes": [
     {
-      "tax_type": "VAT 7%",
+      "tax_type": "VAT",
       "tax_rate": "7%",
       "net_amount": 411.21,
       "tax_amount": 28.79,
