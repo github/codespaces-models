@@ -20,7 +20,7 @@ from azure.core.credentials import AzureKeyCredential
 assert "GITHUB_TOKEN" in os.environ, "Please set the GITHUB_TOKEN environment variable."
 token = os.environ["GITHUB_TOKEN"]
 
-endpoint = "https://models.inference.ai.azure.com"
+endpoint = "https://models.github.ai/inference"
 
 # By using the Azure AI Inference SDK, you can easily experiment with different models
 # by modifying the value of `modelName` in the code below. For this code sample
@@ -30,7 +30,7 @@ endpoint = "https://models.inference.ai.azure.com"
 # Cohere: Cohere-command-r, Cohere-command-r-plus
 # Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
 # Azure OpenAI: gpt-4o-mini, gpt-4o
-model_name = "gpt-4o-mini"
+model_name = "openai/gpt-4o-mini"
 
 client = ChatCompletionsClient(
     endpoint=endpoint,

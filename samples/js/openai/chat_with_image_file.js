@@ -3,10 +3,10 @@ import path from 'path';
 import OpenAI from "openai";
 
 const token = process.env["GITHUB_TOKEN"];
-const endpoint = "https://models.inference.ai.azure.com";
+const endpoint = "https://models.github.ai/inference/";
 
 /* Pick one of the Azure OpenAI models from the GitHub Models service */
-const modelName = "gpt-4o-mini";
+const modelName = "openai/gpt-4o-mini";
 
 export async function main() {
 

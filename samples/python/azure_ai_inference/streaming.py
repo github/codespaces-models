@@ -7,7 +7,7 @@ from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
 
 token = os.environ["GITHUB_TOKEN"]
-endpoint = "https://models.inference.ai.azure.com"
+endpoint = "https://models.github.ai/inference"
 
 # By using the Azure AI Inference SDK, you can easily experiment with different models
 # by modifying the value of `model_name` in the code below. The following models are
@@ -19,7 +19,7 @@ endpoint = "https://models.inference.ai.azure.com"
 # Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
 # Azure OpenAI: gpt-4o-mini, gpt-4o
 # Microsoft: Phi-3-medium-128k-instruct, Phi-3-medium-4k-instruct, Phi-3-mini-128k-instruct, Phi-3-mini-4k-instruct, Phi-3-small-128k-instruct, Phi-3-small-8k-instruct
-model_name = "gpt-4o-mini"
+model_name = "openai/gpt-4o-mini"
 
 client = ChatCompletionsClient(
     endpoint=endpoint,

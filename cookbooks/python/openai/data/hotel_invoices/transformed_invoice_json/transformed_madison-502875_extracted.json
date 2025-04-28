@@ -21,7 +21,7 @@
   },
   "invoice_information": {
     "invoice_number": "502875",
-    "reservation_number": null,
+    "reservation_number": "BD",
     "date": "2019-06-14",
     "room_number": "426",
     "check_in_date": "2019-06-10",
@@ -32,25 +32,25 @@
       "date": "2019-06-10",
       "description": "Overnight stay excluding breakfast",
       "charge": 110.0,
-      "credit": null
+      "credit": 0
     },
     {
       "date": "2019-06-11",
       "description": "Overnight stay excluding breakfast",
       "charge": 110.0,
-      "credit": null
+      "credit": 0
     },
     {
       "date": "2019-06-12",
       "description": "Overnight stay excluding breakfast",
       "charge": 110.0,
-      "credit": null
+      "credit": 0
     },
     {
       "date": "2019-06-13",
       "description": "Overnight stay excluding breakfast",
       "charge": 110.0,
-      "credit": null
+      "credit": 0
     },
     {
       "date": "2019-06-14",
@@ -71,7 +71,7 @@
   "taxes": [
     {
       "tax_type": "VAT",
-      "tax_rate": "7%",
+      "tax_rate": "19%",
       "net_amount": 411.21,
       "tax_amount": 28.79,
       "gross_amount": 440.0

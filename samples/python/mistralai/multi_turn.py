@@ -8,7 +8,7 @@ from mistralai.client import MistralClient
 from mistralai.models.chat_completion import ChatMessage
 
 token = os.environ["GITHUB_TOKEN"]
-endpoint = "https://models.inference.ai.azure.com"
+endpoint = "https://models.github.ai/inference"
 
 # Pick one of the Mistral models from the GitHub Models service
 model_name = "Mistral-small"

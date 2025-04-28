@@ -5,10 +5,10 @@ import os
 from openai import OpenAI
 
 token = os.environ["GITHUB_TOKEN"]
-endpoint = "https://models.inference.ai.azure.com"
+endpoint = "https://models.github.ai/inference"
 
 # Pick one of the Azure OpenAI models from the GitHub Models service
-model_name = "gpt-4o-mini"
+model_name = "openai/gpt-4o-mini"
 
 client = OpenAI(
     base_url=endpoint,
