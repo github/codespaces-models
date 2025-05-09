@@ -34,7 +34,9 @@ response = client.chat.completions.create(
 
 # Print the streamed response
 for update in response:
-    if update.choices[0].delta.content:
-        print(update.choices[0].delta.content, end="")
+    if update.choices:
+        content = update.choices[0].delta.content
+        if content:
+            print(content, end="")
 
 print()
