@@ -4,4 +4,4 @@ This folder contains examples of how to achieve specific tasks using the LangCha
 
 ## Examples
 
-- [LangChain](lc_openai_getting_started.ipynb): Examples of how LangChain can be used with models provided by the GitHub Models service
+- [LangChain](lc_openai_getting_started.ipynb): Examples of how LangChain can be used with models provided by the GitHub Models service.
