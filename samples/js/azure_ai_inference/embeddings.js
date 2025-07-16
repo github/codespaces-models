@@ -3,7 +3,7 @@ import { isUnexpected } from "@azure-rest/ai-inference";
 import { AzureKeyCredential } from "@azure/core-auth";
 
 const token = process.env["GITHUB_TOKEN"];
-const endpoint = "https://models.inference.ai.azure.com";
+const endpoint = "https://models.github.ai";
 
 /* By using the Azure AI Inference SDK, you can easily experiment with different models
    by modifying the value of `modelName` in the code below. For this code sample
@@ -32,9 +32,9 @@ export async function main() {
   for (const item of response.body.data) {
     let length = item.embedding.length;
     console.log(
-	  `data[${item.index}]: length=${length}, ` +
-	  `[${item.embedding[0]}, ${item.embedding[1]}, ` +
-	  `..., ${item.embedding[length - 2]}, ${item.embedding[length -1]}]`);
+      `data[${item.index}]: length=${length}, ` +
+      `[${item.embedding[0]}, ${item.embedding[1]}, ` +
+      `..., ${item.embedding[length - 2]}, ${item.embedding[length - 1]}]`);
   }
   console.log(response.body.usage);
 }
