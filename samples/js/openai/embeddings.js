@@ -1,7 +1,7 @@
 import OpenAI from "openai";
 
 const token = process.env["GITHUB_TOKEN"];
-const endpoint = "https://models.github.ai";
+const endpoint = "https://models.github.ai/inference";
 
 /* Pick one of the OpenAI embeddings models from the GitHub Models service */
 const modelName = "text-embedding-3-small";

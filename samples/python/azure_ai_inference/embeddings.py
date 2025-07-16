@@ -4,7 +4,7 @@ from azure.ai.inference import EmbeddingsClient
 from azure.core.credentials import AzureKeyCredential
 
 token = os.environ["GITHUB_TOKEN"]
-endpoint = "https://models.github.ai"
+endpoint = "https://models.github.ai/inference"
 
 # By using the Azure AI Inference SDK, you can easily experiment with different models
 # by modifying the value of `modelName` in the code below. For this code sample

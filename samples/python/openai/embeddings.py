@@ -2,7 +2,7 @@ import os
 from openai import OpenAI
 
 token = os.environ["GITHUB_TOKEN"]
-endpoint = "https://models.github.ai"
+endpoint = "https://models.github.ai/inference"
 
 # Pick one of the OpenAI embeddings models from the GitHub Models service
 model_name = "text-embedding-3-small"
