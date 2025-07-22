@@ -16,6 +16,9 @@ model_name = "openai/gpt-4o-mini"
 client = OpenAI(
     base_url=endpoint,
     api_key=token,
+    default_headers={
+        "x-ms-useragent": "github-models-sample",
+    }
 )
 
 # Call the chat completion API
