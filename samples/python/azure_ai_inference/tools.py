@@ -26,9 +26,9 @@ endpoint = "https://models.github.ai/inference"
 # by modifying the value of `modelName` in the code below. For this code sample
 # you need a model supporting tools. The following compatible models are
 # available in the GitHub Models service:
-# 
+#
 # Cohere: Cohere-command-r, Cohere-command-r-plus
-# Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
+# Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, mistral-small-2503
 # Azure OpenAI: gpt-4o-mini, gpt-4o
 model_name = "openai/gpt-4o-mini"
 

@@ -4,7 +4,7 @@ const token = process.env["GITHUB_TOKEN"];
 const endpoint = "https://models.github.ai/inference/";
 
 /* Pick one of the Mistral models from the GitHub Models service */
-const modelName = "mistral-ai/Mistral-small";
+const modelName = "mistral-ai/mistral-small-2503";
 
 export async function main() {
 

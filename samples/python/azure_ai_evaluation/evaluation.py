@@ -20,7 +20,7 @@ from azure.identity import DefaultAzureCredential
 token = os.environ['GITHUB_TOKEN']
 
 # Target model is the model to be evaluated.
-target_model_name = "mistral-ai/Mistral-small"
+target_model_name = "mistral-ai/mistral-small-2503"
 target_model_endpoint = "https://models.github.ai/inference/"
 # Judge model is the model to evaluate the target model.
 judge_model_name = "openai/gpt-4o-mini"
@@ -57,7 +57,7 @@ def generate_eval_data():
                 model=target_model_name,
                 temperature=1.,
                 max_tokens=1000,
-                top_p=1.    
+                top_p=1.
             )
             result = response.choices[0].message.content
 
