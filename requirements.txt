@@ -1,5 +1,5 @@
 azure-ai-inference~=1.0.0b4
-azure-ai-evaluation~=1.1.0
+azure-ai-evaluation~=1.13.7
 openai~=1.72.0
 mistralai~=0.4.2
 python-dotenv~=1.0.1
