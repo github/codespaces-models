@@ -4,7 +4,7 @@ const token = process.env["GITHUB_TOKEN"];
 const endpoint = "https://models.github.ai/inference/";
 
 /* Pick one of the Mistral models from the GitHub Models service */
-const modelName = "mistral-ai/Mistral-small";
+const modelName = "mistral-ai/mistral-small-2503";
 
 
 function getFlightInfo({originCity, destinationCity}){
@@ -41,7 +41,7 @@ export async function main() {
             "description": "The name of the city where the flight originates",
           },
           "destinationCity": {
-            "type": "string", 
+            "type": "string",
             "description": "The flight destination city",
           },
         },
@@ -59,17 +59,17 @@ export async function main() {
     { role:"system", content: "You an assistant that helps users find flight information." },
     { role:"user", content: "I'm interested in going to Miami. What is the next flight there from Seattle?" }
   ];
-  
+
   let response = await client.chat({
     model: modelName,
     messages: messages,
     tools: [tool]
   });
-  
+
   if (response.choices[0].finish_reason === "tool_calls"){
     // Append the model response to the chat history
     messages.push(response.choices[0].message);
-    
+
     // We expect a single tool call
     if (response.choices[0].message && response.choices[0].message.tool_calls.length === 1){
       const toolCall = response.choices[0].message.tool_calls[0];

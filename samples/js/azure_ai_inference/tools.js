@@ -10,7 +10,7 @@ const endpoint = "https://models.github.ai/inference/";
    available in the GitHub Models service:
 
    Cohere: Cohere-command-r, Cohere-command-r-plus
-   Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, Mistral-small
+   Mistral AI: Mistral-large, Mistral-large-2407, Mistral-Nemo, mistral-small-2503
    Azure OpenAI: gpt-4o-mini, gpt-4o */
 const modelName = "openai/gpt-4o-mini";
 
@@ -32,7 +32,7 @@ const namesToFunctions = {
 };
 
 export async function main() {
-  
+
   const tool = {
     "type": "function",
     "function": {
@@ -48,7 +48,7 @@ export async function main() {
             "description": "The name of the city where the flight originates",
           },
           "destinationCity": {
-            "type": "string", 
+            "type": "string",
             "description": "The flight destination city",
           },
         },
@@ -77,13 +77,13 @@ export async function main() {
   if (response.status !== "200") {
     throw response.body.error;
   }
-  
+
   // We expect the model to ask for a tool call
   if (response.body.choices[0].finish_reason === "tool_calls"){
 
     // Append the model response to the chat history
     messages.push(response.body.choices[0].message);
-    
+
     // We expect a single tool call
     if (response.body.choices[0].message && response.body.choices[0].message.tool_calls.length === 1){
 

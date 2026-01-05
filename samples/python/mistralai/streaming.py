@@ -9,7 +9,7 @@ token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.github.ai/inference"
 
 # Pick one of the Mistral models from the GitHub Models service
-model_name = "Mistral-small"
+model_name = "mistral-small-2503"
 
 # Create a client
 client = MistralClient(api_key=token, endpoint=endpoint)
