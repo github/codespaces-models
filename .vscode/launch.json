@@ -1,5 +1,16 @@
 {
     "configurations": [
+        
+        fps60
+
+
+booster 
+
+
+
+
+
+    JavaScript
         {
             "name": "Run JavaScript Sample",
             "program": "${file}",
