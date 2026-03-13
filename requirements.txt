@@ -1,7 +1,7 @@
 azure-ai-inference~=1.0.0b9
 azure-ai-evaluation~=1.15.3
 openai~=2.26.0
-mistralai~=0.4.2
+mistralai~=1.9.0
 python-dotenv~=1.2.2
 ipykernel~=7.2.0
 promptflow-devkit~=1.18.3
