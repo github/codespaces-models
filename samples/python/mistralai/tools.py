@@ -4,8 +4,8 @@ This sample demonstrates how to define a function tool
 and how to act on a request from the model to invoke it."""
 import os
 import json
-from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage, Function
+from mistralai import Mistral
+from mistralai.models import Function
 
 token = os.environ["GITHUB_TOKEN"]
 endpoint = "https://models.github.ai/inference"
@@ -59,19 +59,21 @@ tool = {
 }
 
 
-client = MistralClient(api_key=token, endpoint=endpoint)
+client = Mistral(api_key=token, server_url=endpoint)
 
 messages = [
-    ChatMessage(
-        role="system",
-        content="You an assistant that helps users find flight information."),
-    ChatMessage(
-        role="user",
-        content=("I'm interested in going to Miami. What is "
-                 "the next flight there from Seattle?")),
+    {
+        "role": "system",
+        "content": "You an assistant that helps users find flight information.",
+    },
+    {
+        "role": "user",
+        "content": ("I'm interested in going to Miami. What is "
+                    "the next flight there from Seattle?"),
+    },
 ]
 
-response = client.chat(
+response = client.chat.complete(
     messages=messages,
     tools=[tool],
     model=model_name,
@@ -103,16 +105,16 @@ if response.choices[0].finish_reason == "tool_calls":
 
             # Append the function call result fo the chat history
             messages.append(
-                ChatMessage(
-                    role="tool",
-                    name=tool_call.function.name,
-                    content=function_return,
-                    tool_call_id=tool_call.id,
-                )
+                {
+                    "role": "tool",
+                    "name": tool_call.function.name,
+                    "content": function_return,
+                    "tool_call_id": tool_call.id,
+                }
             )
 
             # Get another response from the model
-            response = client.chat(
+            response = client.chat.complete(
                 messages=messages,
                 tools=[tool],
                 model=model_name,
