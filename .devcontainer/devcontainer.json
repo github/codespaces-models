@@ -26,6 +26,7 @@
     "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "latest"
     }  
+    "ghcr.io/szkiba/devcontainer-features/cdo:1": {}
   },
   "overrideFeatureInstallOrder": [
     "ghcr.io/devcontainers/features/common-utils",
